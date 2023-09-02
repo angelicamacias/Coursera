@@ -1,0 +1,5 @@
+import os
+
+directory_path = r"C:\Users\amacias5\Documents\Python\coursera\C_Mod_2"
+os.chdir(directory_path)
+os.remove("spider.txt")

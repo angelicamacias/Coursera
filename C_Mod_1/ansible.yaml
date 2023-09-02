@@ -1,0 +1,42 @@
+---
+- name: "Ansible training"
+  gather_facts: false
+  hosts: "{{ run_hosts }}"
+  vars:
+    file1: "/user/ppro/frfep/PM8847.2141.K"
+    file2: "/user/ppro/frfep/na8847.2141.K"
+    file3: "/user/ppro/frfep/ZNMAINT.2141.zip"
+---
+- name: "Ansible training"
+  gather_facts: false
+  hosts: "{{ run_hosts }}"
+  vars:
+    file_paths:
+      - "/user/ppro/frfep/PM8847.2141.K"
+      - "/user/ppro/frfep/na8847.2141.K"
+      - "/user/ppro/frfep/ZNMAINT.2141.zip"
+
+  tasks:
+    - name: "unzip batch file"
+      unarchive:
+        src: /user/sms/tmp/znetbatch2141.zip
+        dest: /user/ppro/frfep/
+        remote_src: yes
+
+    - name: "chown to unzipped files"
+      file:
+        path: "{{ item }}"
+        owner: sms
+        group: auto
+      loop: "{{ file_paths }}"
+
+    - name: "chmod to unzipped files"
+      file:
+        path: "{{ item }}"
+        mode: '0666'
+      loop: "{{ file_paths }}"
+
+    - name: "remove zip file"
+      file:
+        path: /user/sms/tmp/znetbatch2141.zip
+        state: absent

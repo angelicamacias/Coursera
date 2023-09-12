@@ -7,7 +7,8 @@ with open(input_filename, 'r') as fi, open(output_filename, 'w') as f:
         number = line.strip().split('\t')[0]
         
         # Asegurarse de que el número tenga exactamente 4 dígitos
-        number = number.zfill(4)
+        number = number.zfill(5)
         
-        output_line = "s" + number + ".autozone.com\n"
+        output_line = number + "\n"
+        #output_line = "s" + number + ".autozone.com\n"
         f.write(output_line)

@@ -23,11 +23,18 @@
 ### Diffing files
 
 - the command "diff" help us to show us the change between two files
-- the syntax is: diff <file1- <file2-
-- When we use the command diff we will see the symbols - < 
+- the syntax is: diff <file1-
+ <file2-
+
+- When we use the command diff we will see the symbols -
+ < 
 	< rest content 
-	- add content 
-- also we can use the flag -u ---- "diff -u  <file1- <file2-" this is to get more information about the changes 
+	-
+	 add content 
+- also we can use the flag -u ----
+ "diff -u  <file1-
+ <file2-
+" this is to get more information about the changes 
 	+ add lines
 	- remove lines
 - When we use the command diff we will see the notations: 
@@ -41,10 +48,12 @@
 - with the command patch we can applay the change to the code 
 	syntax: patch code.py < app_change.diff
 - for applay the change we have to save the change in a file withe the exatansion "diff" for convension 
-		diff app1.py app2.py - app_change.diff 
+		diff app1.py app2.py -
+		 app_change.diff 
 - when we have the file with the output of the change we use the command patch to put the change in the code
 	patch code.py < app_change.diff
-- if the result is success then we will have just one line the output: "patchin files <namefile-"
+- if the result is success then we will have just one line the output: "patchin files <namefile-
+"
 - but what do this in place to copy the new code in another fies? the principal reason is, in the case that you want to 
 put the change code in more that one computer then this will take a lot of time, so with this command we can automatice the process. 
 - the module psutil helps to check the percentage of the CPU
@@ -79,7 +88,8 @@ put the change code in more that one computer then this will take a lot of time,
 - apt install git
 - yum install git
 - Git is preloaded with an environment valled MinGW64 (amacias5@DZ-ITDEV4322 MINGW64)
-      ----- this environment lets us operate on Windows with the same commands and tools
+      -----
+	   this environment lets us operate on Windows with the same commands and tools
 		avaliable on Linux 
 
 ### First Steps With Git 
@@ -110,19 +120,24 @@ The git directory contains all the changes and their history the working tree co
 - with "git status" we can see the branch where we are
 - with the "git add" we send the change of the file that we want 
 	git agg <fileName-
+
 - "git commit -m" the add a coment about that what we made
 
 ### The basic Git WorkFlow
 
 - to check out out current configuration by using the "git config -l" command 
 - preference we use a different configurations to use a personal account and a work acount 
-- we create a ripo with -- git init -- we iniatilice the git but is empty
-- if we create a file the file will be untrack "hasta que" we use "git add <FileName- the fiel will be tracked
+- we create a ripo with --
+ git init --
+ we iniatilice the git but is empty
+- if we create a file the file will be untrack "hasta que" we use "git add <FileName-
+ the fiel will be tracked
 - we can add massages with the cli or with the editor
 - it the commits message is enterted the commit will be aborted
 
 ### Anatomy of a commit message
-- git log ---- we can see history the command massgae
+- git log ----
+ we can see history the command massgae
 	- we have here idenfier wich is a long string of letters and numbers
 	- head indicator is pointing to the master branch
 	- we see the mail and name
@@ -136,6 +151,7 @@ You can view the changes made to file using the following command:
 git config --global user.name "Name"
 git config --global user.email "email@ex.com"
 git add <filename-
+
 git status 
 git pull
 git push
@@ -153,15 +169,18 @@ git diff README
 the git commit command? Check all that apply. -a -m
 - git use the HEAD alisas to represent the currently checked-out snapshot of your project
 - one shortcut is skip to the stage are using :
-		git commit -a -m "<massage-"
+		git commit -a -m "<massage-
+		"
 - this shortcut just work with files that already exist becuase they are tracked
 - With new files this dosen't work because they are untraked
 - The logs work the same way ussing the shortcut, it measn if you see the "git log" then we will see the 
-massage of "git commit -a -m "<massage-".
+massage of "git commit -a -m "<massage-
+".
 - The head represent in wich branch are you working.
 
 ### Getting more information about our changes
-- to look at the actual lines that changs in each commit -- git log -p
+- to look at the actual lines that changs in each commit --
+ git log -p
 - here we learn a bunch of commits
 	- git log -p: here we can see the log with the changes add, remove lines
 	- git add -p: here we can see the changes and at same time we can say "yes or not" to the change
@@ -172,7 +191,8 @@ massage of "git commit -a -m "<massage-".
 ### Deleting and renaming files
 - git remove: remove files
 - git mv: rename files
-- echo .FILENAME - .gitignore
+- echo .FILENAME -
+ .gitignore
 - if we use commit -m to put a message the massage have to be short, this is just for small changes. 
 - ls -la show you all the contente in a directory/repo
 
@@ -188,15 +208,18 @@ https://www.coursera.org/learn/introduction-git-github/supplement/39ZMi/advanced
 the git commit command? Check all that apply. -a -m
 - git use the HEAD alisas to represent the currently checked-out snapshot of your project
 - one shortcut is skip to the stage are using :
-		git commit -a -m "<massage-"
+		git commit -a -m "<massage-
+		"
 - this shortcut just work with files that already exist becuase they are tracked
 - With new files this dosen't work because they are untraked
 - The logs work the same way ussing the shortcut, it measn if you see the "git log" then we will see the 
-massage of "git commit -a -m "<massage-".
+massage of "git commit -a -m "<massage-
+".
 - The head represent in wich branch are you working.
 
 ## Getting more information about our changes
-- to look at the actual lines that changs in each commit -- git log -p
+- to look at the actual lines that changs in each commit --
+ git log -p
 - here we learn a bunch of commits
 	- git log -p: here we can see the log with the changes add, remove lines
 	- git add -p: here we can see the changes and at same time we can say "yes or not" to the change
@@ -207,7 +230,8 @@ massage of "git commit -a -m "<massage-".
 ## Deleting and renaming files
 - git remove: remove files
 - git mv: rename files
-- echo .FILENAME - .gitignore
+- echo .FILENAME -
+ .gitignore
 - if we use commit -m to put a message the massage have to be short, this is just for small changes. 
 - ls -la show you all the contente in a directory/repo
 https://www.coursera.org/learn/introduction-git-github/supplement/39ZMi/advanced-git-cheat-sheet
@@ -215,21 +239,22 @@ https://www.coursera.org/learn/introduction-git-github/supplement/39ZMi/advanced
 
 ## Undoing change before committing
 
-- git checkout : git checkout <filename- with this command we rollback to the last version of the file if you dont want the changes that we made. This is before be in the storing area it means is not commited 
-- git reset : if you add a change to the stage area but you dont want that, then with the rest you can reverte the commit,
-- with git reset -p: git will ask change by change if you want to reverte the commits that you made
-- git reset is the antonimus of git add|| remove changes from the stagin area
-- head alias: current checked out snapshot
+- git checkout : git checkout <filename-
+ with this command we rollback to the last version of the file if you dont want the changes that we made. This is before be in the storing area it means is not commited 
+-git reset : if you add a change to the stage area but you dont want that, then with the rest you can reverte the commit,
+-with git reset -p: git will ask change by change if you want to reverte the commits that you made
+-git reset is the antonimus of git add|| remove changes from the stagin area
+-head alias: current checked out snapshot
 
 ## Ammending commits
 
-- git commit --amend: update the commit to include the new change.
+-git commit --amend: update the commit to include the new change.
     It wil take whatever is currently in our staging area and run the git commit workflow to overwrite the previous commit.
-- when you use the --amend commant it will let you change the massage and will add the new changees
-- remember the fist line short and de second line a litter more descriper
-- so git commit --amend: Overwrite the previous commit
-- this commit its ok for fixing up local commits
-- if you use it in public or shared repository rewrites the git history removing the previous commmit and replacing it with the ammended one
+-when you use the --amend commant it will let you change the massage and will add the new changees
+-remember the fist line short and de second line a litter more descriper
+-so git commit --amend: Overwrite the previous commit
+-this commit its ok for fixing up local commits
+-if you use it in public or shared repository rewrites the git history removing the previous commmit and replacing it with the ammended one
 
 
 ## Rollbacks
@@ -238,6 +263,7 @@ git revert t creates a commit that contains the inverse of all the changes made 
 
 syntax: 
 git revert <HEADER-
+
 
 - We will see that in the commit by defult willbe added a line indicate that is a rollback 
 
@@ -250,15 +276,18 @@ git revert <HEADER-
 ## identifying a commit 
 
 -the characters next to the word: commit is the ID, or HASH 
-- the HASH is calulated using an algorithm called SHA1
+-the HASH is calulated using an algorithm called SHA1
 -Essentially, what this algorithm does is take a bunch of data as input and produce a 40 character string from the data as the output.
- example: commit a05ee5d184e9a21259e3fdc53eda01649348359e (HEAD -- master)
-- the HASH is used to: used to guarantee the consistency of our repository.
-- the commit --amend change the HASH for that is not good use it in a public repo
-- git show <HASH>  then you will see the author, date and massege commit
- - git revert <HASH> can but with jus the 4th first characters
+ example: commit a05ee5d184e9a21259e3fdc53eda01649348359e (HEAD --
+  master)
+-the HASH is used to: used to guarantee the consistency of our repository.
+-the commit --amend change the HASH for that is not good use it in a public repo
+-git show <HASH>
+  then you will see the author, date and massege commit
+ -git revert <HASH>
+  can but with jus the 4th first characters
 
-
+# Week 3
 ## What is a brancH? 
 
 Branches make it really easy to experiment with new ideas or strategies and projects. When you want to add a feature or fix something, you can create a new branch and do your development there. You can merge back into the master branch, when you've got something you like, or discard your changes without negative impact if they don't work out
@@ -304,18 +333,68 @@ Branches make it really easy to experiment with new ideas or strategies and proj
 * d2c
 ```
 with command show you a graph of the commits 
-
-# WEEK 3 
-
 - We will learn how to track and untrack merges to the staging area
 - Work with remote respository is super helpful becasuse you can work with people to differents contrys 
 - We will lear how to made changes changing to branches
 
-## What is GitHub? 
-GitHub is a web-based Git repository hosting service
 
-- Destributed: Each developer has a copy of the whole repository on their local machine
-- Remote service where you can save you repositorys
-- You can crate an account private or public
-- In gitHub you can save wikis, code... etc
-- 
+## What is GitHub?
+
+- **Distributed**: Each developer has a copy of the whole repository on their local machine
+- gitlab is a remote repository hosting serive 
+- you can create privete or public accounts
+- in gitlab also you can put wikis, mangnemetns task... etc
+- in git lab you can put the documents and then you can clon in you local machine or syncronice with some other servers, is the way that a team can have the same documents. 
+
+## Basic interacion with GitLab
+
+- first we have to create an accunt 
+- in the account we can create the fistr repository
+	we can select if the repo will be: private or public
+	and add a redame 
+- to have the same content in our lcal machine we use the commant: git pull 
+- to remove the password step we have two options: credential or the ssh key
+- git config --global credential.helper cache: command to create the credential for git ---> Allowing automated login to GitHub
+- also exist another plataforms like: gitlab or bitbucket 
+
+
+## Whast is a remote? 
+
+- With a remote repo all the people who have access can have a copy in their local machine.
+- When we work with remote repositoris with a team is recomend chang the steps, like the marge will make manualit to approve the changes
+- We can control the access to the remote repository with differents way like: 
+	- ssh key
+	- https
+		methods of autentication 
+- When the remote repository have new changes, and you want to push your changes... git will tell you that you have to update you repo in you local:
+				git pull origin <header>
+
+- in the case that a file was changed for two people we will have a conflit merage.. 
+
+
+## Working with remotes
+- Pull the remote branch, merge it with the local branch, then push it back to its origin.
+- Git sets up that remote repository with the default origin name
+- git remote show origin: show a lot of information about the branches
+- git branch -r: show us the remote branches 
+- git remote -v :  We can look at the configuration for that remote by running git remote -v in the directory of the repo.
+
+
+## Fetching new changes
+
+
+- git fetch: To sync the data, we use the git fetch command. This command copies the commits done in the remote repository to the remote branches, so we can see what other people have committed. Let's call it now and see what happens.
+- git merge origin/master: If we want to integrate the branches into our master branch
+- Whats the main difference between git fetch and git pull?
+	git fetch fetches remote updates but doesn't merge; git pull fetches remote updates and merges. 
+
+## Updating the local repository 
+
+- git pull: this comand do fetch and mergin  Running git pull will fetch the remote copy of the current branch and automatically try to merge it into the current local branch.
+- assuming no merfe conflics, which type of merge does git pull perform automatically: 
+	fast-forwar merge
+- git remote show origin: if we need to fin more infromation about a remote branche
+- git remote update: get the contents of a remote branch without automatically merging 
+- explicit merge: creates a new merge commit
+
+## The pull-Merge-push workflow 

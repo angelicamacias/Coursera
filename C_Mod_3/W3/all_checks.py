@@ -17,14 +17,18 @@ def check_dick_full(disk, min_gb, min_percent):
         return True 
     return False
 
-def main():
+def check_root_full():
+    """Returns True if the root partition is full, False otherwise"""
+    return check_dick_full(disk="/", min_gb=2, min_percent=10)
 
+def main():
     if check_reboot():
         print("Pending Reboot")
         sys.exit(1)
-    if check_reboot("/", 2, 10):
-        print("ERROR: not enough disk space")
+    if check_root_full():
+        print("Root partition")
         sys.exit(1)
+
     print("Everything ok")
     sys.exit(0)
 

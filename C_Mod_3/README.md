@@ -87,8 +87,7 @@ put the change code in more that one computer then this will take a lot of time,
 ### Installing git
 - apt install git
 - yum install git
-- Git is preloaded with an environment valled MinGW64 (amacias5@DZ-ITDEV4322 MINGW64)
-      -----
+- Git is preloaded with an environment valled
 	   this environment lets us operate on Windows with the same commands and tools
 		avaliable on Linux 
 
@@ -262,7 +261,7 @@ https://www.coursera.org/learn/introduction-git-github/supplement/39ZMi/advanced
 git revert t creates a commit that contains the inverse of all the changes made in the bad commit in order to cancel them out
 
 syntax: 
-git revert <HEADER-
+git revert <HEADER->
 
 
 - We will see that in the commit by defult willbe added a line indicate that is a rollback 
@@ -381,8 +380,6 @@ with command show you a graph of the commits
 
 
 ## Fetching new changes
-
-
 - git fetch: To sync the data, we use the git fetch command. This command copies the commits done in the remote repository to the remote branches, so we can see what other people have committed. Let's call it now and see what happens.
 - git merge origin/master: If we want to integrate the branches into our master branch
 - Whats the main difference between git fetch and git pull?
@@ -397,4 +394,124 @@ with command show you a graph of the commits
 - git remote update: get the contents of a remote branch without automatically merging 
 - explicit merge: creates a new merge commit
 
-## The pull-Merge-push workflow 
+## Rebasing your changes
+
+- git rebase: tebasing menas changing the base commit that's used for our branch
+- git rebase helps to hae a cleanly integrate commit
+- git push --delete <branchName>: remove the remote branche
+- git branch-d <branchName>: remove the local branche
+- the git rabase helps to put your commit at the top and avoid git conflicts
+- we want to our changes are lines we can see the flow of the git with: 
+git --graph --online
+in the case that we have a branch with commits and at the top we have a commit... for put at the top our changes we use: git rebase  
+What does "git rebase refactor" do?
+	Move the current branche on top of the refactor branch
+
+## Another rebasing example
+The socket module: The 'socket' module defines how server and client machines can communicate at hardware level using socket endpoints on top of the operating system
+
+- socket.gethostname() returns the host name of the current system under which the Python interpreter is executed
+- We can also use the use git rebase to change the order of the commites or even squeash two commits into one. 
+
+## Best practices for collaboration 
+- Always synchronize you branches before staring any work on you own 
+-Avoid having very large changes that modify a lot of different things 
+
+
+https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+
+# Week 4
+## Collaboration 
+- With tools like giHub we can publish our code and you can see the code of the other people 
+- At the same time you can have that code in your local and in the case that you found some bugs or you have some suggestion you can comment about it in the repo
+- Having the code published online means that anyboday in the world can lear form what the project is doing. 
+- Also we can create a prive repo where just your and the people that have access can see what the project is doing. 
+
+## A simple pull request on GitHub
+- fork: a fork is a copy of some repo in your local. 
+- you can make changes in the fork and then send the changes to the master branch 
+- When you dont have access to the master branch and you want to fix some issue automatically gitHub will create a branch  to send the fixes that you made.  
+- pullrequest: a pullrequest is a commit or series of commits that you send to the owner of the rpository so that they incorporate it into their tree. 
+- when you create a pullrequest we can see in the UI a lot of information about the PR: repo and branches that are involved in the change.
+- When collaborating on projects hosted on GitHub, the typical workflows is:
+	1: Create a fork of the repo
+	2: Work on that local fork 
+	3: We wventually merge  our changes back into the main repo by a pullrequest
+
+## Updating an existing pull request
+-  Immpruvment: documentations or test. Some times the team of the project can ask for immpruvment to approve the change request. 
+- commit same branche. If you send a merege request... and then you send more commits all the new commils will go to the same branch. 
+-If we wanted to create a separate pull request, we would need to create a new branch instead
+-Github renders our file and highlights the changes. 
+- In the UI of GitHub we can see the add lienes in green and the delete lines in red.
+- Some time in a project can exist guidelines that we need to follow to can send a merge request, it's important to adhere to them to have a style and all can undertan more is whats going on. 
+
+## Squashing changes
+- We shouldent rewrite history when the commits have been pusblished
+
+
+## The typical pull request workflow on GitHub
+- For makw large change and testing is a best practice create a fork in our repo
+- When we have the fork in our repo, we will have the current files and the history about the repo
+- After that to work in the repo we can clone the fork with: git clon <ssh/htpp> 
+- Having the repo cloned in our local we can make the fixes, also with git log, we can see all the history about the fork 
+- All the issus have a identify number which we can access to the issue like: #1
+- README: means MD extenstion indicates that we're using markdown, which is a ligthweight markup language. 
+
+## What is a code reviews?
+- Code reviews helps to check the content of the new code fix:
+	- Bugs
+	- Style
+	- Unclear variables or functions
+- In the case that you are working with a remote team exist diferents tools for the do codereviews
+- Code Reviews give us a feadback about the new contentent. 
+
+## The code review workflow
+- The workflow for code review is:
+	- create the code
+	- send the code to review
+	- If you have a feadback then they will send you the code to fix that problems wiht comments can be:
+			- suggestions
+			- bugs
+			- testings
+	- then when you have the fixes then you send again the code, then you approve the contente the contente can be push the re repo 
+- in the case that you are working with a team is recomended ask for a style to follow in the creation of the new contente
+- some lenguajes have the own rules like python: PEP8 
+- nit: is a trivial comment or suggestion 
+
+## Managing collaboration 
+- It's very important create a documentation about the proyect for:
+	- In the case a some guy of the team go to vacations
+	- In the case a some new guy will integrate to the team 
+	- To understand better how the proyect works 
+	- In the case that you have a style for the creation of new content, have it in the documentation it's helpfuly to hava a guie about it.
+	etc
+
+- It's very important have a comunaction with the team we can use some tool like: 
+	- Slack
+	- Telegram 
+	etc
+- It's important undertand every merege to know if you can or not acept it, because if you acept every merege without undertand what going on, then the proyect could be unmaintainable.
+
+## Tracking Issues
+- coordination: its important defined who will do what, for the moment that all the work will be together all the problems can be solve wiht an efficent way.
+- issue tracker: this tells what issue needs to be done and who will work on it
+- in git lab we can track the issue with comment of the new contente an we can assing who will work in that issue
+- When writing issues descriptions, it's a good idea to include all the information that we have about the problem or missing features and any ideas on how to solve it. 
+- a puplar bug tracker is: Bugzilla
+- The READMES can help to put the descirption about how to use some program or whatever do you want. 
+- The tack comment also have a id like the commits.
+- How do we reference issues in our commits with automatic links? By using one of the keywords followed by a hashtag and the issue number
+
+## Continuous integration 
+-CI: continuous integation, in this part make differents testing of the code hoping the result is that we want. 
+-CD: continuos delivery: this point happen when the part of CI is succefuly, the new content is diployet in the server.
+- GitHub Actions is a continuous integration and continuous delivery (CI/CD) platform available through GitHub.
+-PIPLINE: the pipline is the steps that you want to evalute to know if is correcto the new code, we configurate the pipeline in a YAML format. 
+-Artifacts: this is the name used to descirbe any files that are tenerated as part of the pipline. 
+- It's importat to identify in which area the piple will work, to not compromise another environment. 
+- Also its important give access just to the people how can work in that area or in that piplines, we can give acces with:
+	- SSH key
+	- API token
+- The piplines are a greate opportunity area because every project have different needs, different tests and creteris to evaluate, having the notions about what is important to evalue and how can we create a robust pipeline we can create a estable pipeline. 
+- Also another plataform to CI/CD is Jenkis wich can bu used to automate lots of differents types of projects. 
